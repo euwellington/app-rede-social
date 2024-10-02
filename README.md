@@ -11,8 +11,10 @@ TESTE MOBILE
  - Executar a aplicação com expo
    yarn start -c
 
+2º Como acessar a aplicação:
+ - Criar um usuário ou acessar com o usuário padrão
 
-2º Ferramentas utilizadas:
+3º Ferramentas utilizadas:
  - Context API
  - React Redux
  - Styled Components
