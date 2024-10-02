@@ -1,20 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { Fragment } from 'react';
+import StackNavigation from './src/component/stack/stackNavigation';
+import { GlobalContextProvider } from './src/context/GlobalContext';
+import { ToastProvider } from 'react-native-toast-notifications';
+import { StatusBar } from 'react-native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer independent={true}>
+      <ToastProvider>
+        <Fragment>
+          <GlobalContextProvider>
+            <StatusBar barStyle={'dark-content'} />
+            <StackNavigation />
+          </GlobalContextProvider>
+        </Fragment>
+      </ToastProvider>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
